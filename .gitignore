@@ -9,7 +9,7 @@
 *.lot
 *.bbl
 *.*.gz
-
+*.toc
 
 # pdf file #
 
