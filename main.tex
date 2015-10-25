@@ -1,0 +1,30 @@
+%Plantilla de tesis tomada de las especificaciones oficiales del MIT
+%%            http://libraries.mit.edu/archives/thesis-specs/
+%
+%
+\documentclass[12pt,vi,twoside,leftblank]{mitthesis}
+
+\usepackage{lgrind}
+\usepackage{cmap}
+\usepackage[T1]{fontenc}
+\pagestyle{plain}
+
+
+\typein[\files]{Escribe el nombre del archivo para procesarlo,(chap1,chap2,...) o`all' para procesar todo los archivos:}
+\def\all{all}
+  \ifx\files\all\typeout{Procesando todos los archivos.} \else\typeout{Procesando solo el archivo \files.}\includeonly{\files}\fi
+
+  \begin{document}
+
+  \include{cover}
+  
+  \pagestyle{plain}
+
+  \include{contents}
+  \include{chap1}
+  %  \appendix
+  \include{biblio}
+
+  \end{document}
+
+  
