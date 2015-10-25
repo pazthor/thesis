@@ -1,0 +1,16 @@
+# Compile source #
+*.aux
+
+
+# logs and database  #
+*.log
+*.blg
+*.lof
+*.lot
+*.bbl
+*.*.gz
+
+
+# pdf file #
+
+*.pdf
