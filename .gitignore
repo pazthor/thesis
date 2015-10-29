@@ -10,7 +10,14 @@
 *.bbl
 *.*.gz
 *.toc
-
+*.glo
+*.glg
+*.gls
+*.idx
+*.ind
+*.out
+*.xdy
+*.ilg
 # pdf file #
 
 *.pdf
