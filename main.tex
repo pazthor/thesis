@@ -2,18 +2,27 @@
 %%            http://libraries.mit.edu/archives/thesis-specs/
 %
 %
-\documentclass[12pt,vi,twoside,leftblank]{mitthesis}
+\documentclass[12pt,vi,twoside,leftblank]{buapthesis}
 
 \usepackage{lgrind}
 \usepackage{cmap}
 \usepackage[T1]{fontenc}
+\usepackage[spanish]{translator}
+\usepackage[colorlinks]{hyperref} 
+\usepackage[toc,style=altlistgroup,hyperfirst=false,xindy]{glossaries}
 \pagestyle{plain}
+%\include{glosario}
+\makeglossaries
+\usepackage[xindy]{imakeidx}
+
 
 
 \typein[\files]{Escribe el nombre del archivo para procesarlo,(chap1,chap2,...) o`all' para procesar todo los archivos:}
 \def\all{all}
   \ifx\files\all\typeout{Procesando todos los archivos.} \else\typeout{Procesando solo el archivo \files.}\includeonly{\files}\fi
 
+
+  \input{glosario}
   \begin{document}
 
   \include{cover}
@@ -24,7 +33,8 @@
   \include{chap1}
   %  \appendix
   \include{biblio}
-
+  %\printindex
+  \printglossaries
   \end{document}
 
   
