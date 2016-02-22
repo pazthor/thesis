@@ -1,0 +1,41 @@
+\chapter{Modelo de actores y Caminatas aleatorias}
+
+\section{modelo de Actores}
+
+
+El modelo de actores fue inventado por Carl Hewitt  en 1973: un formalismo universal de actor modular para la inteligencia artificial, sin embargo la teoria del modelo de actores se formalizo en 1986 por Carl Hewitt, Henri Baker y GulAgha en la  tesis \emph{Actors: A Model of Concurrent Computation in Distributed Systems}. Los actores son objetos autonomos y concurrentes los cuales se ejecutan de manera asincrona. El modelo de actores  nos brinda un mecanismo flexible para  hacer sistemas de software  distribuidos y paralelos 
+
+Un actor es una entidad computacional que adopta la filosof\'ia de \emph{todo es un actor}, similar a la filosof\'ia de \emph{todo es un objeto} usada en los lenguajes de programaci\'on orientado a objetos.
+
+
+Un actor  incorpora 3 capacidades: \textbf{procesar},\textbf{almacenar} y   la capacidad de \textbf{comunicarse} con otros actores, por lo tanto un sistema de actores cuenta con las siguientes caracteristica:
+
+--Comunicaci\'on por mensajes asincronos directos: Un actor puede comunicarse con otro actor siempre y cuando conozca la direccion del actor con quien quiere comunicarse, el paso de mensajes se es asincrono.
+
+
+--M\'aquinas de estado: Un actor soporta m\'aquinas de estado finita.En cada estado  se puede cambiar el comportamiento del actor para responder ante los mensajes que reciba en el futuro. 
+
+--Objetos con bloqueo: Los actores no comparten su estado mutable con otro actores u otro componente que sea importante.
+
+--Libre de bloqueos de concurrencia: como los actores no comparten sus estados mutable, y porque ellos reciben un solo mensaje a la vez, actores nunca necesitan bloquear sus estados antes de reaccionar a un mensaje.
+
+--Paralelismo: en el modelo de actores el paralelismo divide procesos complejos a tareas m\'as peque\~nas para ejecutar las tareas de manera concurrente. [1]
+
+
+
+De tal manera que cuando recibe un mensaje un actor  puede hacer lo siguiente:
+
+[Lista  comand]
+- Enviar un n\'umero finito de mensajes a otro actor
+-Crar numeros finitos de otros actores
+-Designar  que es lo que  va a hacer con los mensajes siguiente.
+
+
+
+[1] Vaughn Vernon. “Reactive Messaging Patterns With the Actor Model: Applications and Integration in Scala and Akka.” 
+
+http://c2.com/cgi/wiki?ActorsModel
+http://www.erights.org/history/actors.html
+http://doc.akka.io/docs/akka/2.4.1/general/actors.html
+
+\section {Caminatas aleatorias}

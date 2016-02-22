@@ -1,6 +1,6 @@
 # Compile source #
 *.aux
-
+*metafiles
 
 # logs and database  #
 *.log
