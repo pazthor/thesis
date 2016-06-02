@@ -15,7 +15,7 @@
 \usepackage[toc,style=altlistgroup,hyperfirst=false,xindy]{glossaries}
 \pagestyle{plain}
 %\include{glosario}
-\makeglossaries
+%\makeglossaries
 \usepackage[xindy]{imakeidx}
 
 
@@ -25,7 +25,7 @@
   \ifx\files\all\typeout{Procesando todos los archivos.} \else\typeout{Procesando solo el archivo \files.}\includeonly{\files}\fi
 
 
-  \input{glosario}
+ % \input{glosario}
   \begin{document}
 
   \include{cover}
