@@ -119,7 +119,7 @@
 %%%%%%%%
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{mitthesis}[1999/10/20]
+\ProvidesClass{buappthesis}[1999/10/20] %% cambio de mit a buap 
 
 \def\mystretch{1.5}		% Double spacing hack
 \DeclareOption{doublespace}{}	% This is default
