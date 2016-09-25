@@ -7,15 +7,95 @@ Una cadena de Markov es una sucesi\'on de ensayos similares u observaciones en l
 
 \section{Cadenas de Markov Homogenea}
 
-Sea una matriz $k x k$ y $P = (p_i,_j)$ un proceso aleatorio $(X_0,X_1,...)$ con un espacio finito $S = \{s_1,s_2,...,s_k\}$ $ Im X_0 \cup Im X_1 \cup ImX_2$... se dice que es una CADENA DE MARKOV HOMOGENEA CON MATRIZ de transici\'on P, si $\forall n$ y $\forall i,j \epsilon \{1,...,k\} $ se tiene $P(X_{n +1} = s_j | X_0 = s_i,..., X_n = s_i$\\
+Sea una matriz $k x k$ y $P = (p_i,_j)$ un proceso aleatorio$(X_0,X_1,...)$ con un espacio finito $S = \{s_1,s_2,...,s_k\}$ $ Im X_0 \cup Im X_1 \cup ImX_2$... se dice que es una ~italic(CADENA DE MARKOV HOMOGENEA CON MATRIZ) de transici\'on $P$, si $\forall n$ y $\forall i,j \epsilon \{1,...,k\} $ se tiene $P(X_{n +1} = s_j | X_0 = s_i,..., X_n = s_i)$\\
+
+
 $ P (X_{n+1} = s_j | X_n = s_i) = p_{ij}$
+$p(X_{n + 1} = s_{_i} |X_n = s_i )$
+$p(x_{n+1} = s_i | X _n = s_i) $
+.... etc (sigue asi)
+Homogeneiddad en el tiempo
+<Agregar llave  para indicarlo>
+\todo[prepend, caption={Short note with prepend}]{A very long and tedious
+  note that cannot be on one line in the list of todos.}.
 
+Hay que notar que $P_{i,j} >= 0$<cambiar a simbolo mayor o igual > y que $\sum_{j=1}^{k}P_{ji} = 1$
 
-Distribuci\'on de probabilidad :
+Lo anterior se traduce a una  distribuci\'on de probabilidad :
 $\sum_{j = 1}^{k}p_{i,j} = \sum_{j = 1}^k p(X_{n +1} = j | X_n = i) = 1$
 
+\todo{resaltar} Definici\'on: La distribuci\'on inicial  de la cadena de Markov Hom\'ogenea
+Sea  $(X_0,X_1,...) $ una variable aleatoria
 
-%definicion 
+<agregar una conexi\'on >
+\todo[noprepend, caption={Short note with noprepend}]{A very long and
+ tedious note that cannot be on one line in the list of todos.}.
+es
+$\mu^{(0)} = (p(X_0 = s_1), p(X_0 = s_2) ...p(X_0 = s_k))$
+$ = ( \mu_1^0, \mu_2^{(0)},\mu_3^{(0)} ... \mu_k^{(0)})  $
 
-% forma
+<agregar estilo a lo siguiente.>
+Ejemplo: $\mu^{(0)} (p(X_0 = 1), p(X_0 = 2)) $
+$= (1, 0, 0, 0)p(X_0 = 3), p(X_0 = 4)$
 
+Distribuci\'on en el tiempo $n$:
+
+$\mu^{(n)} = (p(X_n = s_i), p(X_n = s_2), ..., p(X_n = s_k))$
+$\mu^{(n)} = (p(X_n = s_i),p(X_n = s_2) ... p(X_n = s_k))$
+$= (\mu_1^{(n)}, \mu_2^{(n)}, ..., \mu_k^{(n)} )$
+
+\todo[noprepend]{fue otra sesion y se agrega otro ejemplo "el borracho de las 4 esquinas" }
+
+
+
+\todo{16 de Mayo}
+$\mu^{(1)} = (p(X_1 = 1), p(X_1 = 2), p(X_1 = 3), p(X_1 = 4)$
+$ = (0,  1/2, 0, 1/2) $
+
+Teorema\todo[fancyline]{Resaltar} Sea $(X_0, X_1, X_2, X_3,\ldots __..\todo[fancyline]{simbolo de puntos suspensivos}.)$   una cadena de Markov con espacios de estados finitos $\{s_1,s_2,...,s_k)$  y distribuci\'on inicial $\mu^{(0)}$. Entonces\\
+
+$\mu = \mu^{0}P^n_2 $
+$P$  es una matriz cuadrada  $k\todo[fancyline]{poner x de por (existe?)}xk$, $k$ es el n\'umero de elementos de estados finitos.\\
+
+Demostraci\'on por inducci\'on $n$
+\begin{equation}\label{eq1:ej1}
+n = 0
+\mu^{(0)} = \mu^{(0)} P^{(0)}
+
+n = 1
+\mu^{(1)}_j = p(X = s_j)
+= p(X_0 = s_1, X_1 = s_j)
++
+p(X_0 = s_2, X_1 = s_j
+.
+.
+.
++ p(X_0 = s_k, X_1 = s_j)
+
+
+=\sum^{k}_{i = 1} p(X_0 = s_i, X_1 = s_j)
+=\sum^{k}_{i = 1} p(X_1 = s_i, X_0 = s_j
+=\sum^n_{i = 1} p(X_0 = s_i,) p(X_1 = s_j | X_0 = s_i )
+
+\todo[fancyline]{simbolo de flecha}=> \mu^{(0)} = \mu^{(1)}P
+
+
+\end{equation}
+
+
+\todo{18 de mayo}
+$\mu^{(n)} = \mu^{(n)}P^n$
+
+donde $\mu^{(n)} =  (p(X_n =s_1), p(X_n = s_2, \ldots, p(X_k = s_k ) ) ) $
+Sea $S = {s_1, s_2,\ldots, s_k}$  un espacio de estados de $(X_0, X_1, X_2,..., X_k)$
+de una cadena de Markov homog\'enea.
+
+Ejemplo tiempo de Gotemburgo
+
+
+
+
+
+
+
+% for

@@ -1,0 +1,197 @@
+%% ----------------------------------------------------------------
+%% Thesis.tex -- MAIN FILE (the one that you compile with LaTeX)
+%% ----------------------------------------------------------------
+
+% Set up the document
+\documentclass[letter, 12pt, oneside]{Thesis1}  % Use the "Thesis" style, based on the ECS Thesis style by Steve Gunn
+%\graphicspath{{Figures/}}  % Location of the graphics files (set up for graphics to be in PDF format)
+%\fontfamily{sf}
+% Include any extra LaTeX packages required
+%\usepackage[square, numbers, comma, authoryear, sort&compress]{natbib}  % Use the "Natbib" style for the references in the Bibliography
+%\usepackage[comma,authoryear,sort]{natbib}
+% \bibpunct{(}{)}{;}{a}{,}{;}
+\usepackage{verbatim}  % Needed for the "comment" environment to make LaTeX comments
+\usepackage{vector}  % Allows "\bvec{}" and "\buvec{}" for "blackboard" style bold vectors in maths
+%\hypersetup{urlcolor=blue, colorlinks=true}  % Colours hyperlinks in blue, but this can be distracting if there are many links.
+%\usepackage[dvips]{graphicx}
+%\renewcommand{\rmdefault}{phv}
+%\renewcommand{\rmdefault}{cmss}
+\usepackage{url}
+\usepackage{enumerate}
+\usepackage{algorithmic}
+\usepackage{algorithm}
+\numberwithin{algorithm}{chapter}
+\usepackage{color}
+%\usepackage[dvipsone]{graphicx}
+%\usepackage[dvipsone]{color}
+%\usepackage{array}
+%\usepackage{colortbl}
+%\usepackage{setspace}
+%\onehalfspacing
+%\doublespacing
+
+
+%% ----------------------------------------------------------------
+\begin{document}
+\frontmatter	  % Begin Roman style (i, ii, iii, iv...) page numbering
+
+%===============================================================================================================================
+% Set up the Title Page
+
+\title  {Modelo de Actores aplicado al muestreo de redes sociales mediante
+  Caminatas Aleatorias.}
+\authors  {\texorpdfstring
+            {{Julio C\'esar Pastor Marcelo}}
+            {Julio C\'esar}
+          }
+\addresses  {\groupname\\\deptname\\\univname}  % Do not change this here, instead these must be set in the "Thesis.cls" file, please look through it instead
+\date       {M\'exico, Puebla, Mes de A\~{n}o}
+%\subject    {}
+%\keywords   {}
+
+\maketitle
+
+%% ----------------------------------------------------------------
+\setstretch{1.3}  % It is better to have smaller font and larger line spacing than the other way round
+% Define the page headers using the FancyHdr package and set up for one-sided printing
+\fancyhead{}  % Clears all page headers and footers
+\rhead{\thepage}  % Sets the right side header to show the page number
+\lhead{}  % Clears the left side page header
+
+\pagestyle{fancy}  % Finally, use the "fancy" page style to implement the FancyHdr headers
+%===============================================================================================================================
+% Quotation page
+%\setstretch{1.3}  % Return the line spacing back to 1.3
+%\setcounter{footnote}{0}
+%\fancyhead{}  % Clears all page headers and footers
+\pagestyle{empty}  % Page style needs to be empty for this page
+\dedicatory{\emph{Las redes sociales le dan el derecho de hablar a legiones de
+    idiotas que primero hablaban solo en el bar despu\'es de un vaso de vino,
+    sin da\~{n}ar a la comunidad.} por Umberto Eco}
+\pagestyle{fancy}  % Finally, use the "fancy" page style to implement the FancyHdr headers
+\clearpage  % Dedication ended, start a new page
+
+%===============================================================================================================================
+% Begin the Dedication page
+%\setstretch{1.3}  % Return the line spacing back to 1.3
+%\setcounter{footnote}{0}
+%\fancyhead{}  % Clears all page headers and footers
+\pagestyle{empty}  % Page style needs to be empty for this page
+\dedicatory{Dedicado a mi familia\ldots}
+\pagestyle{fancy}  % Finally, use the "fancy" page style to implement the FancyHdr headers
+\clearpage  % Dedication ended, start a new page
+
+
+%===============================================================================================================================
+% The Abstract Page
+\addtotoc{Resumen}  % Add the "Abstract" page entry to the Contents
+\abstract{
+\addtocontents{toc}{\vspace{1em}}  % Add a gap in the Contents, for aesthetics
+
+Resumen de tesis.
+}
+
+\clearpage  % Abstract ended, start a new page
+
+
+%===============================================================================================================================
+%\lhead{\emph{Contenido}}  % Set the left side page header to "Contents"
+\tableofcontents  % Write out the Table of Contents
+
+%===============================================================================================================================
+\setstretch{1.3}  % Reset the line-spacing to 1.3 for body text (if it has changed)
+
+% The Acknowledgements page, for thanking everyone
+\acknowledgements{
+\addtocontents{toc}{\vspace{1em}}  % Add a gap in the Contents, for aesthetics
+
+Agradecimientos\ldots
+
+}
+\clearpage  % End of the Acknowledgements
+
+%% ----------------------------------------------------------------
+\pagestyle{fancy}  %The page style headers have been "empty" all this time, now use the "fancy" headers as defined before to bring them back
+
+%===============================================================================================================================
+\lhead{\emph{Lista de Figuras}}  % Set the left side page header to "List if Figures"
+\listoffigures  % Write out the List of Figures
+
+%===============================================================================================================================
+\lhead{\emph{Lista de Tablas y Algoritmos}}  % Set the left side page header to "List of Tables"
+\listoftables  % Write out the List of Tables
+\renewcommand*\listalgorithmname{Lista de Algoritmos}
+\listofalgorithms % Write out the List of algorithms
+
+%===============================================================================================================================
+\setstretch{1.5}  % Set the line spacing to 1.5, this makes the following tables easier to read
+\clearpage  % Start a new page
+\lhead{\emph{Acronimos y Notaci\'on}}  % Set the left side page header to "Abbreviations"
+\listofsymbols{ll}  % Include a list of Abbreviations (a table of two columns)
+{
+% \textbf{Acronym} & \textbf{W}hat (it) \textbf{S}tands \textbf{F}or \\
+\textbf{AAM}    & Active Appearance Model\\
+\textbf{AFDM}   & Adaptive Focus Deformable Model \\
+
+}
+
+%===============================================================================================================================
+\clearpage  %Start a new page
+\lhead{\emph{S\'imbolos}}  % Set the left side page header to "Symbols"
+\listofnomenclature{ll}  % Include a list of Symbols (a three column table)
+{
+% symbol & name \\
+$a$                                          & State of a Markov chain.\\
+& \\ % Gap to separate the Roman symbols from the Greek
+$\alpha(a,\mathbf{z})$ & Acceptance probability ratio in a Markov chain.\\
+
+}
+
+
+%===============================================================================================================================
+\mainmatter	  % Begin normal, numeric (1,2,3...) page numbering
+\pagestyle{fancy}  % Return the page headers back to the "fancy" style
+
+% Include the chapters of the thesis, as separate files
+% Just uncomment the lines as you write the chapters
+
+\input{./Chapters/Chapter1/Chapter1.tex}
+
+\input{./Chapters/Chapter2/Chapter2.tex}
+
+\input{./Chapters/Chapter3/Chapter3.tex}
+
+\input{./Chapters/Chapter4/Chapter4.tex}
+
+\input{./Chapters/Chapter5/Chapter5.tex}
+
+%\input{./Chapters/Chapter6/Chapter6.tex}
+
+%\input{./Chapters/Chapter7/Chapter7.tex}
+
+%% ----------------------------------------------------------------
+% Now begin the Appendices, including them as separate files
+
+\addtocontents{toc}{\vspace{2em}} % Add a gap in the Contents, for aesthetics
+
+\appendix % Cue to tell LaTeX that the following 'chapters' are Appendices
+
+\input{./Appendices/AppendixA/AppendixA.tex}
+
+%\input{./Appendices/AppendixB/AppendixB.tex}
+
+\addtocontents{toc}{\vspace{2em}}  % Add a gap in the Contents, for aesthetics
+\backmatter
+
+%===============================================================================================================================
+\label{Bibliography}
+\lhead{\emph{Bibliograf\'ia}}  % Change the left side page header to "Bibliography"
+%\bibliographystyle{unsrtnat}  % Use the "unsrtnat" BibTeX style for formatting the Bibliography
+%\bibliographystyle{unsrt}  % Use the "unsrt" BibTeX style for formatting the Bibliography
+%\bibliographystyle{plainnat}
+\bibliographystyle{plain}
+%\bibliographystyle{apalike}
+\bibliography{Bibliography}  % The references (bibliography) information are stored in the file named "Bibliography.bib"
+
+\end{document}  % The End
+%% ----------------------------------------------------------------
