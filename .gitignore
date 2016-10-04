@@ -18,6 +18,9 @@
 *.out
 *.xdy
 *.ilg
+Tesis.loa
+Tesis.tdo
+
 # pdf file #
 
 *.pdf
