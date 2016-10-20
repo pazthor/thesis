@@ -1,43 +1,63 @@
 %Capitulo 1: caminatas aleatorias
 \chapter{Probabilidad Caminatas aleatorias   cadenas de Markov} % Write in your own chapter title
 \label{Chapter1}
-\lhead{Cap\'itulo1. \emph{Caminatas aleatorias}} % Write in your own chapter title to set the page header
+\lhead{Cap\'itulo1. \emph{Caminatas aleatorias}} % Write in your own
+                                                 % chapter title to
+                                                 % set the page
+                                                 % header
 
 
 \section {Que son las caminatas aleatorias ?}
-Una caminata aleatoria es una serie de pasos donde la decisi\'on de elegir un
+Una caminata aleatoria es una serie de pasos donde la decisi\'on de
+elegir un
 camino es al azar.\\
-Para hablar de caminatas aleatorias es necesario retormar los ejemplos de en donde se ocupan,
-Las caminatas aleatorias intentan ser una representacion de los movimiento que
-generan los animales cuando comienzan a explorar su entorno para cazar, los
-movimientos o direccion que toma una molecula y la direccion que toma elegira un
+Para hablar de caminatas aleatorias es necesario retormar los ejemplos
+de en donde se ocupan, Las caminatas aleatorias intentan ser una
+representacion de los movimiento que generan los animales cuando
+comienzan a explorar su entorno para cazar, los movimientos o
+direccion que toma una molecula y la direccion que toma elegira un
 \emph{borracho}.\\
 
-Una caminata aleatoria sigue una  estrategia para elegir el siguiente paso (o
-direcci\'on)  de manera aleatoria. Existen diferentes estrategias de las cuales podemos mencionar
-Movimiento browniano, vuelo de levy,\ldots  \todo{agregar } entre otros. Esta
-investigacion solo se centrara en las estrategias que usa \emph{los algoritmos
+Una caminata aleatoria sigue una estrategia para elegir el siguiente
+paso (o direcci\'on) de manera aleatoria. Existen diferentes
+estrategias de las cuales podemos mencionar Movimiento browniano,
+vuelo de levy,$ \ldots$ \todo{agregar } entre otros. Esta
+investigacion solo se centrara en las estrategias que usa \emph{los
+  algoritmos
   que considera el doctor Carlos en su phd } \todo{cambiar frase}\\
 
 
+\section{leí}
+
+\paragraph{otro párrafo}
 
 
 
 
-\\
-\todo{editar definicion}
-Definicion: sea \{X_k\}_{k=1}^\inf una secuencia de independientes e identicamen
-te distribuidas variables aleatorias, para cada entero positivo n, asignamos
-S_n denotando la suma de $X_1 + X_2 + X_3 + \ldots + X_n  $. La secuencia
-\{S_n\}_{n = 1}^\inf es llamada \emph{Caminata Aleatoria}. si el rango comun de
-X_k esta en R^m, entonces diremos que \{S_n\} es una caminata aleatoria en R^m.
+
+
+aqui una \todo{editar definicion}
+\begin{define}
+  Sea $ (X_k )_{k=1}^\infty$
+  una secuencia de independientes e identicamen
+  te distribuidas variables aleatorias, para cada entero positivo $n$, asignamos
+  $S_n$ denotando la suma de $X_1 + X_2 + X_3 + \ldots + X_n  $.
+
+ La secuencia
+$ \{ S_n \}_{n = 1}^\infty$
+
+
+es llamada \emph{Caminata Aleatoria}. si el rango comun de
+$X_k$ esta en $R^m$, entonces diremos que $\{S_n\}$ es una caminata aleatoria en $R^m$.
 \todo{ref: introduction to probabilty, charles M. Grinstead }
+\end{define}
 
 \section{Por que  usar caminatas aleatorias para recorrer un grafo?}
 El objetivo es  obtenr una muestra recorriendo nodos de una manera aleatoria
 y obtener muestras lo mas cercanas a un entorno real
 \section {Que herramientas (de tecnologia) usar para recorrer un grafo?}
-La estructura para almacenar el grafo sera Neo4j  y se recorrera usando C#  el modelo de actores
+
+La estructura para almacenar el grafo sera Neo4j  y se recorrera usando C\#  el modelo de actores
 \section {*Por que recorrer una red social con caminatas aleatorias y no usando  -otra herramienta-}
 
 \section{Cadenas de Markov, algoritmos Metropolis hasting, Montecarlo}
@@ -89,7 +109,7 @@ $= (1, 0, 0, 0)p(X_0 = 3), p(X_0 = 4)$
 Distribuci\'on en el tiempo $n$:
 
 $\mu^{(n)} = (p(X_n = s_i), p(X_n = s_2), ..., p(X_n = s_k))$
-\todo[inline]{fue otra sesion y se agrega otro ejemplo "el borracho de las 4 esquinas" }
+\todo[inline]{fue otra sesion y se agrega otro ejemplo el borracho de las 4 esquinas }
 $\mu^{(n)} = (p(X_n = s_i),p(X_n = s_2) ... p(X_n = s_k))$
 $= (\mu_1^{(n)}, \mu_2^{(n)}, ..., \mu_k^{(n)} )$
 
