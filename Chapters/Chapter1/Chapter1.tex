@@ -1,115 +1,90 @@
-%Capitulo 1: caminatas aleatorias
-\chapter{Probabilidad Caminatas aleatorias   cadenas de Markov} % Write in your own chapter title
+% Capitulo 1: caminatas aleatorias
+\chapter{Probabilidad Caminatas aleatorias cadenas de  Markov}
+% Write in your own chapter title
 \label{Chapter1}
-\lhead{Cap\'itulo1. \emph{Caminatas aleatorias}} % Write in your own
-                                                 % chapter title to
-                                                 % set the page
-                                                 % header
+\lhead{Cap\'itulo 1.\emph{Caminatas aleatorias}} % Write in your own
+% chapter title to
+% set the page
+% header
 
 
-\section {Que son las caminatas aleatorias ?}
+\section {\textquestiondown Qu\'e son las caminatas aleatorias ?}
 Una caminata aleatoria es una serie de pasos donde la decisi\'on de
-elegir un
-camino es al azar.\\
-Para hablar de caminatas aleatorias es necesario retormar los ejemplos
-de en donde se ocupan, Las caminatas aleatorias intentan ser una
-representacion de los movimiento que generan los animales cuando
-comienzan a explorar su entorno para cazar, los movimientos o
-direccion que toma una molecula y la direccion que toma elegira un
-\emph{borracho}.\\
+elegir una caminata aleatoria es una serie de pasos que no dependa del
+paso anterior o en donde el caminante se encuentre en ese momento,
+cada paso es una decision al azar y \"estocastica\", en computacion
+existen varias 'estrategias' que ayudan a implementar la aleatoriedad
+de cada paso que da un caminante como son 'metropolis hasting'\todo{falta definir texto}
+'movimiento brownianno', 'vuelo de levy'.\\
 
-Una caminata aleatoria sigue una estrategia para elegir el siguiente
-paso (o direcci\'on) de manera aleatoria. Existen diferentes
-estrategias de las cuales podemos mencionar Movimiento browniano,
-vuelo de levy,$ \ldots$ \todo{agregar } entre otros. Esta
-investigacion solo se centrara en las estrategias que usa \emph{los
-  algoritmos
-  que considera el doctor Carlos en su phd } \todo{cambiar frase}\\
+Por ejemplo una caminanata aleatoria se puede considerar como los
+movimientos que realiza una persona en estado ebriedad, el cual pierde
+el control en sus movimientos de tal manera que cada movimiento que
+realize sera imcomprensible y complicado de predecir.
 
-
-\section{leí}
-
-\paragraph{otro párrafo}
-
-
-
-
-
-
-aqui una \todo{editar definicion}
-\begin{define}
-  Sea $ (X_k )_{k=1}^\infty$
-  una secuencia de independientes e identicamen
-  te distribuidas variables aleatorias, para cada entero positivo $n$, asignamos
-  $S_n$ denotando la suma de $X_1 + X_2 + X_3 + \ldots + X_n  $.
-
- La secuencia
-$ \{ S_n \}_{n = 1}^\infty$
-
-
-es llamada \emph{Caminata Aleatoria}. si el rango comun de
-$X_k$ esta en $R^m$, entonces diremos que $\{S_n\}$ es una caminata aleatoria en $R^m$.
-\todo{ref: introduction to probabilty, charles M. Grinstead }
-\end{define}
-
-\section{Por que  usar caminatas aleatorias para recorrer un grafo?}
-El objetivo es  obtenr una muestra recorriendo nodos de una manera aleatoria
-y obtener muestras lo mas cercanas a un entorno real
-\section {Que herramientas (de tecnologia) usar para recorrer un grafo?}
-
-La estructura para almacenar el grafo sera Neo4j  y se recorrera usando C\#  el modelo de actores
-\section {*Por que recorrer una red social con caminatas aleatorias y no usando  -otra herramienta-}
-
-\section{Cadenas de Markov, algoritmos Metropolis hasting, Montecarlo}
 
 
 
 
 
 \section{Probabilidad y concepto b\'asicos}
-En esta seccion vamos a escribir los temas que fuesen necesarios para comprender
-caminatas aleatorias empezando por conceptos de probabilidad, variable aleatoria,
-caminatas aleatorias y por cadenas de markov.
-\section{Cadenas de Markov}
+En esta seccion vamos a escribir los temas que fuesen necesarios para
+comprender caminatas aleatorias empezando por conceptos de
+probabilidad, variable aleatoria, caminatas aleatorias y por cadenas
+de markov.
+
+
+\subsection{Cadenas de Markov}
+Una cadena de Markov es una sucesi\'on de ensayos similares u
+observaciones en la cual cada ensayo tiene el mismo n\'umero finito de
+resultados posibles y en donde la probabilidad de cada resultado para
+un ensayo dado depende s\'olo del resultado del ensayo inmediatamente
+precedente y no de cualquier resultado previo.
+
+
+Una cadena de markov es una suecison de variables aleatorias las
+cuales dependen de la anterio
 
 
 
-Una cadena de Markov es una sucesi\'on de ensayos similares u observaciones en la cual cada ensayo tiene el mismo n\'umero finito de resultados posibles y en donde la probabilidad de cada resultado para un ensayo dado depende s\'olo del resultado del ensayo inmediatamente precedente y no de cualquier resultado previo.
+\subsubsection{cadenas de markov homogenea}
 
+Sea una matriz $k \times k$ y $P = (p_i,_j)$. Un proceso aleatorio
+$(X_0,X_1,...)$ con espacio finito de estados
+$S = \{s_1,s_2,...,s_k\}= im \, x_0 \; \cup im x_1 \cup imx_2, \ldots$
+se dice que es una \emph{cadena de markov homogenea con matriz de
+transici\'on} $P$, si $\forall n$ y
+$\forall i,j \epsilon \{1,\ldots,k\} $ se tiene
+\[p(x_{n +1} = s_j | x_0 = s_i,\dots, x_n = s_i) = p (x_{n+1} = s_j |
+  x_n = s_i) = p_{ij}\]
+$p(x_{n + 1} = s_{_i} |x_n = s_i )$
+$p(x_{n+1} = s_i | X _n = s_i) $ .... etc (sigue asi) Homogeneiddad en
+el tiempo <Agregar llave para indicarlo>
 
-\section{Cadenas de Markov Homogenea}
+Hay que notar que $P_{i,j} >= 0$<cambiar a simbolo mayor o igual > y
+que $\sum_{j=1}^{k}P_{ji} = 1$
 
-Sea una matriz $k x k$ y $P = (p_i,_j)$ un proceso aleatorio$(X_0,X_1,...)$ con un espacio finito $S = \{s_1,s_2,...,s_k\}$ $ Im X_0 \cup Im X_1 \cup ImX_2$... se dice que es una ~italic(CADENA DE MARKOV HOMOGENEA CON MATRIZ) de transici\'on $P$, si $\forall n$ y $\forall i,j \epsilon \{1,...,k\} $ se tiene $P(X_{n +1} = s_j | X_0 = s_i,..., X_n = s_i)$\\
+Lo anterior se traduce a una distribuci\'on de probabilidad:
+$$\sum_{j = 1}^{k}p_{i,j} = \sum_{j = 1}^k p(X_{n +1} = j | X_n = i) =
+1$$
 
+\todo[fancyline]{resaltar} Definici\'on: La distribuci\'on inicial de
+la cadena de Markov Hom\'ogenea Sea $(X_0,X_1,...) $ una variable
+aleatoria
 
-$ P (X_{n+1} = s_j | X_n = s_i) = p_{ij}$
-$p(X_{n + 1} = s_{_i} |X_n = s_i )$
-$p(x_{n+1} = s_i | X _n = s_i) $
-.... etc (sigue asi)
-Homogeneiddad en el tiempo
-<Agregar llave  para indicarlo>
-
-Hay que notar que $P_{i,j} >= 0$<cambiar a simbolo mayor o igual > y que $\sum_{j=1}^{k}P_{ji} = 1$
-
-Lo anterior se traduce a una  distribuci\'on de probabilidad :
-$\sum_{j = 1}^{k}p_{i,j} = \sum_{j = 1}^k p(X_{n +1} = j | X_n = i) = 1$
-
-\todo[fancyline]{resaltar} Definici\'on: La distribuci\'on inicial  de la cadena de Markov Hom\'ogenea
-Sea  $(X_0,X_1,...) $ una variable aleatoria
-
-<agregar una conexi\'on >
-es
+<agregar una conexi\'on > es
 $\mu^{(0)} = (p(X_0 = s_1), p(X_0 = s_2) ...p(X_0 = s_k))$
-$ = ( \mu_1^0, \mu_2^{(0)},\mu_3^{(0)} ... \mu_k^{(0)})  $
+$ = ( \mu_1^0, \mu_2^{(0)},\mu_3^{(0)} ... \mu_k^{(0)}) $
 
-<agregar estilo a lo siguiente.>
-Ejemplo: $\mu^{(0)} (p(X_0 = 1), p(X_0 = 2)) $
+<agregar estilo a lo siguiente.> Ejemplo:
+$\mu^{(0)} (p(X_0 = 1), p(X_0 = 2)) $
 $= (1, 0, 0, 0)p(X_0 = 3), p(X_0 = 4)$
 
 Distribuci\'on en el tiempo $n$:
 
 $\mu^{(n)} = (p(X_n = s_i), p(X_n = s_2), ..., p(X_n = s_k))$
-\todo[inline]{fue otra sesion y se agrega otro ejemplo el borracho de las 4 esquinas }
+\todo[inline]{fue otra sesion y se agrega otro ejemplo el borracho de
+  las 4 esquinas }
 $\mu^{(n)} = (p(X_n = s_i),p(X_n = s_2) ... p(X_n = s_k))$
 $= (\mu_1^{(n)}, \mu_2^{(n)}, ..., \mu_k^{(n)} )$
 
@@ -119,50 +94,41 @@ $= (\mu_1^{(n)}, \mu_2^{(n)}, ..., \mu_k^{(n)} )$
 
 \todo{16 de Mayo}
 $\mu^{(1)} = (p(X_1 = 1), p(X_1 = 2), p(X_1 = 3), p(X_1 = 4)$
-$ = (0,  1/2, 0, 1/2) $
+$ = (0, 1/2, 0, 1/2) $
 
-Teorema\todo{Resaltar}
- Sea $(X_0, X_1, X_2, X_3,  . )$
-  una cadena de Markov con espacios de estados finitos $\{s_1,s_2,...,s_k\}$  y distribuci\'on inicial $\mu^{(0)}$. Entonces\\
+Teorema\todo{Resaltar} Sea $(X_0, X_1, X_2, X_3, . )$ una cadena de
+Markov con espacios de estados finitos $\{s_1,s_2,...,s_k\}$ y
+distribuci\'on inicial $\mu^{(0)}$. Entonces\\
 
-$\mu = \mu^{0}P^n_2 $
-$P$  es una matriz cuadrada  \todo{poner x de por existe} $k  xk $, $k$ es el n\'umero de elementos de estados finitos.\\
+$\mu = \mu^{0}P^n_2 $ $P$ es una matriz cuadrada \todo{poner x de por
+  existe} $k xk $, $k$ es el
+n\'umero de elementos de estados finitos.\\
 
 
 
 Demostraci\'on por inducci\'on n
 \begin{equation}\label{eq1:ej1}
-n = 0
-\mu^{(0)} = \mu^{(0)} P^{(0)}
-n = 1
-\mu^{(1)}_j = p(X = s_j)
-= p(X_0 = s_1, X_1 = s_j)
-+
-p(X_0 = s_2, X_1 = s_j
-.
-.
-.
-+ p(X_0 = s_k, X_1 = s_j)
-=\sum^{k}_{i = 1} p(X_0 = s_i, X_1 = s_j)\\
-=\sum^{k}_{i = 1} p(X_1 = s_i, X_0 = s_j\\
-=\sum^n_{i = 1} p(X_0 = s_i,) p(X_1 = s_j | X_0 = s_i )\\
- => \mu^{(0)} = \mu^{(1)}P
+  n = 0
+  \mu^{(0)} = \mu^{(0)} P^{(0)}
+  n = 1
+  \mu^{(1)}_j = p(X = s_j)
+  = p(X_0 = s_1, X_1 = s_j)
+  +
+  p(X_0 = s_2, X_1 = s_j
+  .
+  .
+  .
+  + p(X_0 = s_k, X_1 = s_j)
+  =\sum^{k}_{i = 1} p(X_0 = s_i, X_1 = s_j)\\
+  =\sum^{k}_{i = 1} p(X_1 = s_i, X_0 = s_j\\
+  =\sum^n_{i = 1} p(X_0 = s_i,) p(X_1 = s_j | X_0 = s_i )\\
+  => \mu^{(0)} = \mu^{(1)}P
 \end{equation}\todo[fancyline]{colocar ecuaciones }
 
 
-\todo[inline]{18 de mayo}
-$\mu^{(n)} = \mu^{(n)}P^n$
+\todo[inline]{18 de mayo} $\mu^{(n)} = \mu^{(n)}P^n$
 
-donde $\mu^{(n)} =  (p(X_n =s_1), p(X_n = s_2, \ldots, p(X_k = s_k ) ) ) $
-Sea $S = {s_1, s_2,\ldots, s_k}$  un espacio de estados de $(X_0, X_1, X_2,..., X_k)$
-de una cadena de Markov homog\'enea.
-
-Ejemplo tiempo de Gotemburgo
-
-
-
-
-
-
-
-% for
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../../Tesis"
+%%% End:

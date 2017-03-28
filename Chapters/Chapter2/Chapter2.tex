@@ -1,25 +1,64 @@
-% Chapter 2 : Modelo de Actores
+% Chapter 2: Modelo de Actores
 
-\chapter{Modelo de Actores} % Write in your own chapter title
+\chapter{Modelo de Actores}
+
+% Write in your own chapter title
 \label{Chapter2}
-\lhead{Cap\'itulo 2. \emph{Modelo de Actores}} % Write in your own chapter title to set the page header
+\lhead{Cap\'itulo 2 . \emph{Modelo de Actores}} % Write in your own
+                                                % chapter title to set
+                                                % the page header
+
+
+
+\texttt{El objetivo de este
+  capitulo hoy sera hablar del modelo de actores, primero lo definamos
+  como creamos correcto, despues lo leemos y vamos agregando mas
+  contexto y profundida para que expliquemos que es }
+
+El modelo de Actores es una estrategia para solucionar problemas
+concurrentes, cada actor se maneja de manera autonoma y se comnunica
+con otros actores a traves de mensajes. Un actor puede verse como un
+objeto en el paradigma orientado a objetos, donde un objeto para
+comunicarse con otro objeto es a traves de paso de mensajes.
+
+Hoy en dia hay varios problemas que requieren una arquitectura de
+software que soporte fallas y que en su dise\~no se permita ser
+concurrente y distribuido para la demanda que pudiera tener en el
+tiempo. En este capitulo es desfrito que tecnologias y lenguajes de
+programacion ocupan el modelo de actores y ventajas sobre otros
+modelos concurrencia.
+
+
+\section{Concurrencia en problemas actuales}
+Con el paso del tiempo, los sistemas se han vuelto mas complejos dando
+como resultado diferentes estrategias para evitar los problemas que
+conlleva tener un sistema que soporte grandes transacciones, datos y
+usuarios que demandan respuesta en cuestión de segundos (Facebook,
+Twitter [ligar twitter Entrevista?] ).
+
+Los datos que se envian en redes sociales son demasiado y la
+estrategia de computo se vuelve interesante en este punto, es por ello
+que para poder atacarlos es necesario estrategias que cumplan con el
+manifiesto reactivo y que tanto el lenguaje de programacion como sus
+framework tengan un diseño robusto para darle un poco de
+determinismo\todo{DETERMIKHA?} a este tipo de problemas.
 
 \section{\textquestiondown Qu\'e es el modelo de Actores?}
 El modelo de actores viene a cumplir una funcion en particular que es
 desarrollar sistemas robustos: escalables, resitente a fallos,
 autoreparables y distribuidos, siguiendo los principios del manifiesto
-\todonote{cita o liga} reactivo
+\todo{cita o liga} reactivo
+
 
 El manifiesto reactivo nos dice que debemos disenar software robusto y
 siguiendo el modelo dejalo crashear, que ha sido como la industria de
 las telecomunicaciones ha estado manejando apoyadonse en lenguajes
-como Erlang \todonotes{cita erlang}.
+como Erlang \todo{cita erlang}.
 
 \subsection{Actores}
 
 \subsection{akka}
-Lo que Akka nos ofrece es un scale out y scale in
-
+Lo que Akka nos ofrece es un\emph{ scale out} y \emph{scale in}
 Procesamiento en tiempo real de transacciones distribuidas elacticas y
 resilientes.Ademas de que nos ofrece lograr abtraer una capa para
 facilitar el diseno de sistemas distribuidos con ciertas
@@ -28,68 +67,101 @@ caracteristicas
 \todo{http://getakka.net/docs/concepts/terminology} leyendo
 
 \section{Que tecnologias usa el modelo de actores}
-\section{diferencias entre el MA con otras teorias o herramientas
-  que podrian hacer lo mismo que el modelo de actores (hilos) }
+\section{diferencias entre el MA con otras teorias o herramientas que
+  podrian hacer lo mismo que el modelo de actores (hilos) }
 \section{El modelo de actores para Sistemas ditribuidos }
 
-Un sistema con modelo de actores\todo{aca en este punto podemos incluir el
-  manifiesto Reactivo (?)} puede aydar ya que un actor como se describio en [n]
-podemos saber que tiene ventajas sobre otro tipo de "herramientas" para hacer
-disen\~nos distribuidos.
+Un sistema con modelo de actores\todo{aca en este punto podemos
+  incluir el manifiesto Reactivo (?)} puede aydar ya que un actor como
+se describio en [n] podemos saber que tiene ventajas sobre otro tipo
+de "herramientas" para hacer disen\~nos distribuidos.
 
 
 \section{Introduccion al modelo de Actores}
 
-la idea de este capitulo es hablar de un resumen cuando se desarrollo el modelo de actores, qu ees un actor, porque es importante,  con que lo podemos comparar (igual y esta con que es) y por ultimo porque elegir al modelo de actores por (spoiler) hilos.
+la idea de este capitulo es hablar de un resumen cuando se desarrollo
+el modelo de actores, qu ees un actor, porque es importante, con que
+lo podemos comparar (igual y esta con que es) y por ultimo porque
+elegir al modelo de actores por (spoiler) hilos.
 
 \section{Definicion de un actor}
-Un actor es una la pieza meas primitica en el modelo de actores,e ste actor tiene ciertas responsabilidades: crear un actor, mandar un mensaje, etc....
-\section{uso practico del modelo de actores}
-Un ejemplo en la vida de un actor que puede reflejarse superior a un primitivo Hilo o threat....
+Un actor es una la pieza meas primitica en el modelo de actores,e ste
+actor tiene ciertas responsabilidades: crear un actor, mandar un
+mensaje, etc....
 
+
+\section{uso practico del modelo de actores}
+Un ejemplo en la vida de un actor que puede reflejarse superior a un
+primitivo Hilo o threat....
+
+
+
+
+jjsjsjs
 
 \section{modelo de Actores}
+El modelo de actores fue inventado por Carl Hewitt en 1973: un
+formalismo universal\todo{Modificar este parrafo} de actor modular
+para la inteligencia artificial, sin embargo la teoria del modelo de
+actores se formalizo en 1986 por Carl Hewitt, Henri Baker y GulAgha en
+la tesis \emph{Actors: A Model of Concurrent Computation in
+  Distributed Systems}. Los actores son objetos autonomos y
+concurrentes los cuales se ejecutan de manera asincrona. El modelo de
+actores nos brinda un mecanismo flexible para hacer sistemas de
+software distribuidos y paralelos
+
+Un actor es una entidad computacional que adopta la filosof\'ia de
+\emph{todo es un actor}, similar a la filosof\'ia de \emph{todo es un
+  objeto} usada en los lenguajes de programaci\'on orientado a
+objetos.
 
 
-El modelo de actores fue inventado por Carl Hewitt  en 1973: un formalismo
-universal de actor modular para la inteligencia artificial, sin embargo la
-teoria del modelo de actores se formalizo en 1986 por Carl Hewitt, Henri Baker y
-GulAgha en la  tesis \emph{Actors: A Model of Concurrent Computation in
-  Distributed Systems}. Los actores son objetos autonomos y concurrentes los
-cuales se ejecutan de manera asincrona. El modelo de actores  nos brinda un
-mecanismo flexible para  hacer sistemas de software  distribuidos y paralelos
+Un actor incorpora 3 capacidades: \textbf{procesar},\textbf{almacenar}
+y la capacidad de \textbf{comunicarse} con otros actores, por lo tanto
+un sistema de actores cuenta con las siguientes caracteristica:
 
-Un actor es una entidad computacional que adopta la filosof\'ia de \emph{todo es un actor}, similar a la filosof\'ia de \emph{todo es un objeto} usada en los lenguajes de programaci\'on orientado a objetos.
+--Comunicaci\'on por mensajes asincronos directos: Un actor puede
+comunicarse con otro actor siempre y cuando conozca la direccion del
+actor con quien quiere comunicarse, el paso de mensajes se es
+asincrono.
 
+--M\'aquinas de estado: Un actor soporta m\'aquinas de estado
+finita.En cada estado se puede cambiar el comportamiento del actor
+para responder ante los mensajes que reciba en el futuro.
 
-Un actor  incorpora 3 capacidades: \textbf{procesar},\textbf{almacenar} y   la capacidad de \textbf{comunicarse} con otros actores, por lo tanto un sistema de actores cuenta con las siguientes caracteristica:
+--Objetos con bloqueo: Los actores no comparten su estado mutable con
+otro actores u otro componente que sea importante.
 
---Comunicaci\'on por mensajes asincronos directos: Un actor puede comunicarse con otro actor siempre y cuando conozca la direccion del actor con quien quiere comunicarse, el paso de mensajes se es asincrono.
+--Libre de bloqueos de concurrencia: como los actores no comparten sus
+estados mutable, y porque ellos reciben un solo mensaje a la vez,
+actores nunca necesitan bloquear sus estados antes de reaccionar a un
+mensaje.
 
-
---M\'aquinas de estado: Un actor soporta m\'aquinas de estado finita.En cada estado  se puede cambiar el comportamiento del actor para responder ante los mensajes que reciba en el futuro.
-
---Objetos con bloqueo: Los actores no comparten su estado mutable con otro actores u otro componente que sea importante.
-
---Libre de bloqueos de concurrencia: como los actores no comparten sus estados mutable, y porque ellos reciben un solo mensaje a la vez, actores nunca necesitan bloquear sus estados antes de reaccionar a un mensaje.
-
---Paralelismo: en el modelo de actores el paralelismo divide procesos complejos a tareas m\'as peque\~nas para ejecutar las tareas de manera concurrente. [1]
-
-
-
-De tal manera que cuando recibe un mensaje un actor  puede hacer lo siguiente:
-
-[Lista  comand]
-- Enviar un n\'umero finito de mensajes a otro actor
--Crar numeros finitos de otros actores
--Designar  que es lo que  va a hacer con los mensajes siguiente.
+--Paralelismo: en el modelo de actores el paralelismo divide procesos
+complejos a tareas m\'as peque\~nas para ejecutar las tareas de manera
+concurrente. [1]
 
 
 
-[1] Vaughn Vernon. “Reactive Messaging Patterns With the Actor Model: Applications and Integration in Scala and Akka.”
+De tal manera que cuando recibe un mensaje un actor puede hacer lo
+siguiente:
+
+[Lista comand] - Enviar un n\'umero finito de mensajes a otro actor
+-Crar numeros finitos de otros actores -Designar que es lo que va a
+hacer con los mensajes siguiente.
+
+
+
+[1] Vaughn Vernon. “Reactive Messaging Patterns With the Actor Model:
+Applications and Integration in Scala and Akka.”
 
 http://c2.com/cgi/wiki?ActorsModel
 http://www.erights.org/history/actors.html
 http://doc.akka.io/docs/akka/2.4.1/general/actors.html
 
-\section {Caminatas aleatorias}
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../../Tesis"
+%%% End:
